@@ -25,7 +25,14 @@
 	if($_GET["menu"]=="") {
 		echo f_menu();
 	} else {
-		echo "@@@123@@@";
+		$flag=explode("@|@",$_GET["flag"]);
+		$con=mysqli_connect("localhost","root","","app");
+		$q=mysqli_query($con,"SELECT * FROM user WHERE user='$flag[0]' AND password='".md5($flag[1])."'");
+		if(mysqli_num_rows($q)==1){
+			while($h=mysqli_fetch_array($q)){
+				echo "@@@Login Berhasil@@@";
+			}
+		}
 	}
 
 // echo f_menu();
@@ -53,8 +60,7 @@ function f_menu(){
 						<div class='tab-pane fade in active' id='menu0'>
 
 							<div class='col-md-6'>
-								<h1>Selamat Datang Di Kuliah Online LP3I</h1>
-								<h2>Silakan Login Dulu Kakak</h2>
+								
 								<form action=''>
 									<div class='form-group'>
 										<label for='username' class='text-info'>Username:</label><br>
