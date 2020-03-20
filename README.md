@@ -1,3 +1,5 @@
-# Manajemen User
+# Management User
 
-BY Drs. Bambang Hartoko
+Teacher : Drs. Bambang Hartoko
+
+Learning About Management User for App
